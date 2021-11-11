@@ -5,11 +5,11 @@ import styles from "./UserFinder.module.css";
 import UserContext from "./store/users-context";
 import ErrorBoundary from "./ErrorBoundary";
 
-// const DUMMY_USERS = [
-//   { id: "u1", name: "Max" },
-//   { id: "u2", name: "Manuel" },
-//   { id: "u3", name: "Julie" },
-// ];
+const DUMMY_USERS = [
+  { id: "u1", name: "Max" },
+  { id: "u2", name: "Manuel" },
+  { id: "u3", name: "Julie" },
+];
 
 class UserFinder extends Component {
   static contextType = UserContext;
@@ -23,13 +23,13 @@ class UserFinder extends Component {
   }
 
   componentDidMount() {
-    this.setState({ filteredUsers: this.context.users });
+    this.setState({ filteredUsers: DUMMY_USERS });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchTerm !== this.state.searchTerm) {
       this.setState({
-        filteredUsers: this.context.users.filter((user) =>
+        filteredUsers: DUMMY_USERS.filter((user) =>
           user.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
         ),
       });

@@ -15,8 +15,8 @@ function App() {
 
   return (
     <div>
-      <UserContext.Provider>
-        <UserFinder value={userContext} />
+      <UserContext.Provider value={userContext}>
+        <UserFinder />
       </UserContext.Provider>
     </div>
   );
